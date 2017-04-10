@@ -14,7 +14,7 @@ public class Main {
         deck.shuffle();
         AIPlayer player;
         for(int i = 0; i < 100; i++){
-            player = new AIPlayer(deck);
+            player = new AIPlayer(deck,10);
             System.out.println(getHandType(player.getHand()) + ": " + player.getHand() + ", probabilities: (" + probabilitiesToString(player.getHand()) + ")");
             player.discard();
             System.out.println("New Hand: " + player.getHand() + "\n");

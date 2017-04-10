@@ -12,6 +12,9 @@ public abstract class Player {
         chips = startingChips;
     }
 
+    //returns a value of 0 for fold, 1 for call, 2 for raise
+    public abstract int makeBet();
+
     public abstract int discard();
 
     public HandOfCards getHand() {

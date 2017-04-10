@@ -9,6 +9,11 @@ public class HumanPlayer extends Player {
     }
 
     @Override
+    public int makeBet() {
+        return 0;
+    }
+
+    @Override
     public int discard() {
         return 0;
     }

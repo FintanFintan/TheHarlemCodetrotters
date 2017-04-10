@@ -3,7 +3,7 @@ package Poker;
 import java.util.ArrayList;
 
 public class GameOfPoker {
-	private ArrayList<Player> players = new ArrayList<>;
+	private ArrayList<Player> players = new ArrayList<>();
 	private DeckOfCards deck = new DeckOfCards();
 	private int numPlayers = 5;
 	private int startingChips = 56;
@@ -18,9 +18,9 @@ public class GameOfPoker {
 	}
 	
 	public void gameLoop() {
-		HandOfPoker handOfPoker = new HandOfPoker();
+		PokerRound handOfPoker = new PokerRound();
 		while(numPlayers != 1 || players.get(0).getChips() != 0) {
-		    handOfPoker.initiate();
+//		    handOfPoker.initiate();
 		}
 		
 		for(Player p: players) {

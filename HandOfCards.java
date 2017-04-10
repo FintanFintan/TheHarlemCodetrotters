@@ -13,15 +13,15 @@ public class HandOfCards {
 
     Evaluations such as Three of a kind only had a small range of possible ranks seeing as its impossible to have two hands with the same rank.
      */
-    static private final int PAIR_DEFAULT = 1000000;
-    static private final int TWO_PAIR_DEFAULT = PAIR_DEFAULT + 1000000;
-    static private final int THREE_OF_A_KIND_DEFAULT = TWO_PAIR_DEFAULT + 15;
-    static private final int STRAIGHT_DEFAULT = THREE_OF_A_KIND_DEFAULT + 15;
-    static private final int FLUSH_DEFAULT = STRAIGHT_DEFAULT + 1000000;
-    static private final int FULL_HOUSE_DEFAULT = FLUSH_DEFAULT + 15;
-    static private final int FOUR_OF_A_KIND_DEFAULT = FULL_HOUSE_DEFAULT + 15;
-    static private final int STRAIGHT_FLUSH_DEFAULT = FOUR_OF_A_KIND_DEFAULT + 15;
-    static private final int ROYAL_FLUSH_DEFAULT = STRAIGHT_FLUSH_DEFAULT + 15;
+    static public final int PAIR_DEFAULT = 1000000;
+    static public final int TWO_PAIR_DEFAULT = PAIR_DEFAULT + 1000000;
+    static public final int THREE_OF_A_KIND_DEFAULT = TWO_PAIR_DEFAULT + 15;
+    static public final int STRAIGHT_DEFAULT = THREE_OF_A_KIND_DEFAULT + 15;
+    static public final int FLUSH_DEFAULT = STRAIGHT_DEFAULT + 1000000;
+    static public final int FULL_HOUSE_DEFAULT = FLUSH_DEFAULT + 15;
+    static public final int FOUR_OF_A_KIND_DEFAULT = FULL_HOUSE_DEFAULT + 15;
+    static public final int STRAIGHT_FLUSH_DEFAULT = FOUR_OF_A_KIND_DEFAULT + 15;
+    static public final int ROYAL_FLUSH_DEFAULT = STRAIGHT_FLUSH_DEFAULT + 15;
 
 
     static public final int SIZE_OF_HAND = 5;
@@ -218,7 +218,6 @@ public class HandOfCards {
                 }
                 return 0;
             }
-
 
             if (cardPosition == 4) {
                 return 0;
