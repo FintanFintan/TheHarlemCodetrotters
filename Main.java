@@ -1,9 +1,6 @@
 package Poker;
 
 
-
-import java.util.ArrayList;
-
 /**
  * Created by Thomas Fitzpatrick on 29/01/2017.
  * Student Number 13443402
@@ -15,9 +12,9 @@ public class Main {
     public static void main(String[] args) {
         DeckOfCards deck = new DeckOfCards();
         deck.shuffle();
-        PokerPlayer player;
+        AIPlayer player;
         for(int i = 0; i < 100; i++){
-            player = new PokerPlayer(deck);
+            player = new AIPlayer(deck);
             System.out.println(getHandType(player.getHand()) + ": " + player.getHand() + ", probabilities: (" + probabilitiesToString(player.getHand()) + ")");
             player.discard();
             System.out.println("New Hand: " + player.getHand() + "\n");

@@ -30,10 +30,7 @@ public class HandOfCards {
 
     public HandOfCards(DeckOfCards deck){
         this.deck = deck;
-        for(int i = 0; i < SIZE_OF_HAND; i++){
-            hand.add(deck.dealNext());
-        }
-        sort();
+        initialise();
     }
 
     public HandOfCards(PlayingCard a, PlayingCard b, PlayingCard c, PlayingCard d, PlayingCard e){
@@ -43,6 +40,22 @@ public class HandOfCards {
         hand.add(d);
         hand.add(e);
         sort();
+    }
+
+    public void initialise(){
+        for(int i = 0; i < SIZE_OF_HAND; i++){
+            hand.add(deck.dealNext());
+        }
+        sort();
+    }
+
+    public void emptyHand(){
+        hand.clear();
+    }
+
+    public void dealNewHand(){
+        hand.clear();
+        initialise();
     }
 
     public void replaceCards(int[] discardCards, int count){
