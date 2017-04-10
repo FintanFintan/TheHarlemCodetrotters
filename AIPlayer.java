@@ -6,40 +6,44 @@ import java.util.Random;
  * Created by thoma on 07/03/2017.
  */
 public class AIPlayer extends Player{
+    Random random = new Random();
+    int boldnessModifier = 0;
 
     AIPlayer(DeckOfCards deck, int startingChips){
         super(deck, startingChips);
+        boldnessModifier = -10 + random.nextInt(20);
     }
 
     @Override
     public int makeBet() {
         int value = hand.getGameValue();
-        int random = 0;
+        int howLikely = 0;
         Random r = new Random();
-        random = r.nextInt(100);
+        howLikely = r.nextInt(100) + boldnessModifier;
         if(value > HandOfCards.PAIR_DEFAULT) {
 
             if (value > HandOfCards.THREE_OF_A_KIND_DEFAULT) {
 
                 if (value > HandOfCards.STRAIGHT_DEFAULT) {
-                    if (random < 65) {
+                    if (howLikely > 35) {
                         return 2;
-                    } else if (random < 98) {
+                    } else if (howLikely > 2) {
                         return 1;
                     }
                     return 0;
                 }
-                if (random < 40) {
+                if (howLikely > 60) {
                     return 2;
-                } else if (random < 90){
+                } else if (howLikely > 10){
                     return 1;
                 }
                 return 0;
             }
-
-            if(random < 5){
+            //TODO deal with one pair modifier
+            //pairs ofter affect 5draw poker so modifier is important
+            if(howLikely > 95){
                 return 2;
-            } else if(random < 90){
+            } else if(howLikely > 20){
                 return 1;
             }
             return 0;
