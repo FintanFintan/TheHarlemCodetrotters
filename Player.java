@@ -17,6 +17,11 @@ public abstract class Player {
 
     public abstract int discard();
 
+    public int winChips(int winnings){
+        chips += winnings;
+        return winnings;
+    }
+
     public HandOfCards getHand() {
         return hand;
     }

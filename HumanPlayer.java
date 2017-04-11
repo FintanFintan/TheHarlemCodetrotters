@@ -8,6 +8,7 @@ public class HumanPlayer extends Player {
         super(deck, startingChips);
     }
 
+
     @Override
     public int makeBet() {
         return 0;

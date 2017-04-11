@@ -12,24 +12,27 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
+        GameOfPoker game = new GameOfPoker(10, 5);
+        game.gameLoop();
 
-        Random r = new Random();
-        int howLikely = 0;
-        for(int i = 0; i < 1000; i++){
-            howLikely = -10 + r.nextInt(21);
-            System.out.println(howLikely);
-        }
-        howLikely = -10 + r.nextInt(20);
-        DeckOfCards deck = new DeckOfCards();
-        deck.shuffle();
-        AIPlayer player;
-        for(int i = 0; i < 100; i++){
-            player = new AIPlayer(deck,10);
-            System.out.println(getHandType(player.getHand()) + ": " + player.getHand() + ", probabilities: (" + probabilitiesToString(player.getHand()) + ")");
-            player.discard();
-            System.out.println("New Hand: " + player.getHand() + "\n");
-            deck.reset();
-        }
+
+//        Random r = new Random();
+//        int howLikely = 0;
+//        for(int i = 0; i < 1000; i++){
+//            howLikely = -10 + r.nextInt(21);
+//            System.out.println(howLikely);
+//        }
+//        howLikely = -10 + r.nextInt(20);
+//        DeckOfCards deck = new DeckOfCards();
+//        deck.shuffle();
+//        AIPlayer player;
+//        for(int i = 0; i < 100; i++){
+//            player = new AIPlayer(deck,10);
+//            System.out.println(getHandType(player.getHand()) + ": " + player.getHand() + ", probabilities: (" + probabilitiesToString(player.getHand()) + ")");
+//            player.discard();
+//            System.out.println("New Hand: " + player.getHand() + "\n");
+//            deck.reset();
+//        }
 
 
 

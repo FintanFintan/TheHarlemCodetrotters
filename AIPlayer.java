@@ -14,8 +14,16 @@ public class AIPlayer extends Player{
         boldnessModifier = -10 + random.nextInt(21);
     }
 
+
     @Override
-    public int makeBet() {
+    public int makeBet(){
+        int bet = generateBet();
+        chips = chips - bet;
+        return bet;
+    }
+
+
+    private int generateBet() {
         int value = hand.getGameValue();
         int howLikely = 0;
         Random r = new Random();

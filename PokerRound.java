@@ -4,23 +4,49 @@ import java.util.ArrayList;
 
 public class PokerRound {
 	ArrayList<Player> players;
+	int pot = 0;
 
 	public PokerRound(ArrayList<Player> players) {
 		this.players = players;
 	}
 
 	public void playRound(){
-		for(Player p: players)
-			p.makeBet();
+		int bet = 0;
 
-		for(Player p: players)
-			p.discard();
+		//players make initial bet, if bet zero they fold and are removed from round
+		for(Player player: players) {
+			bet = player.makeBet();
+			if(bet > 0){
+				pot += bet;
+			} else {
+				players.remove(player);
+			}
+		}
 
-		for(Player p: players)
-			p.makeBet();
+		//remaining players can discard cards
+		for(Player player: players)
+			player.discard();
 
-		for(Player p: players){
+		//players make second round of bets
+		for(Player player: players) {
+			bet = player.makeBet();
+			if (bet > 0) {
+				pot += bet;
+			} else {
+				players.remove(player);
+			}
+		}
+
+		//winner found and chips allocated
+		Player winner = players.get(0);
+		for(Player player: players){
+			if(player.getHand().getGameValue() > winner.getHand().getGameValue()){
+				winner = player;
+			}
 			//players win round and chips distributed, we're gonna have to deal with the output eventually too...
+
+			winner.winChips(pot);
+			pot = 0;
 		}
 	}
 
