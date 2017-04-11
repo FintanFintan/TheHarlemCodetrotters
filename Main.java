@@ -1,6 +1,8 @@
 package Poker;
 
 
+import java.util.Random;
+
 /**
  * Created by Thomas Fitzpatrick on 29/01/2017.
  * Student Number 13443402
@@ -10,6 +12,14 @@ package Poker;
 public class Main {
 
     public static void main(String[] args) {
+
+        Random r = new Random();
+        int howLikely = 0;
+        for(int i = 0; i < 1000; i++){
+            howLikely = -10 + r.nextInt(21);
+            System.out.println(howLikely);
+        }
+        howLikely = -10 + r.nextInt(20);
         DeckOfCards deck = new DeckOfCards();
         deck.shuffle();
         AIPlayer player;

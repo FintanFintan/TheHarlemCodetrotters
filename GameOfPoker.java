@@ -6,7 +6,7 @@ public class GameOfPoker {
 	private ArrayList<Player> players = new ArrayList<>();
 	private DeckOfCards deck = new DeckOfCards();
 	private int numPlayers = 5;
-	private int startingChips = 56;
+	private int startingChips = 10;
 	
 	private void createPlayers() {
 		HumanPlayer player = new HumanPlayer(deck, startingChips);
@@ -18,18 +18,18 @@ public class GameOfPoker {
 	}
 	
 	public void gameLoop() {
-		PokerRound handOfPoker = new PokerRound();
-		while(numPlayers != 1 || players.get(0).getChips() != 0) {
-//		    handOfPoker.initiate();
-		}
-		
-		for(Player p: players) {
-			p.getHand().emptyHand();
-		}
-		deck.reset();
-	
-		for(Player p: players) {
-			p.getHand().dealNewHand();
+		PokerRound roundOfPoker = new PokerRound(players);
+
+		while(players.size() > 1) {
+			deck.reset();
+			for(Player player: players){
+				if(player.getChips() == 0){
+					players.remove(player);
+				} else {
+					player.getHand().dealNewHand();
+				}
+			}
+			roundOfPoker.playRound();
 		}
 	}
 }

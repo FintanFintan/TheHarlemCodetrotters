@@ -11,7 +11,7 @@ public class AIPlayer extends Player{
 
     AIPlayer(DeckOfCards deck, int startingChips){
         super(deck, startingChips);
-        boldnessModifier = -10 + random.nextInt(20);
+        boldnessModifier = -10 + random.nextInt(21);
     }
 
     @Override
