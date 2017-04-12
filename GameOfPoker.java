@@ -52,6 +52,13 @@ public class GameOfPoker {
 		while(players.size() > 1) {
 			deck.reset();
 			System.out.println("\n\n\nRound " + roundNumber + ": \n" + players);
+			int sum = 0;
+			for(Player palayer: players){
+				sum += palayer.getChips();
+			}
+			if(sum < 40){
+				System.out.println("*******************************************");
+			}
 			roundNumber++;
 
 

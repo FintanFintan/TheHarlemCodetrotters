@@ -37,7 +37,6 @@ public abstract class Player {
         return
                 "name='" + name + '\'' +
 //                ", hand=" + hand +
-                ", chips=" + chips +
-                '}';
+                ", chips=" + chips;
     }
 }

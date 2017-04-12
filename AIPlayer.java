@@ -20,8 +20,18 @@ public class AIPlayer extends Player{
     @Override
     public int makeBet(){
         int bet = generateBet();
+        System.out.println(this.name + " bet " + bet);
         chips = chips - bet;
         return bet;
+    }
+
+    //determines whether a player can bet as much as they would like
+    private int maxBet(int amount){
+        int i = amount;
+        while(i > this.chips)
+            i--;
+
+        return i;
     }
 
 
@@ -35,35 +45,27 @@ public class AIPlayer extends Player{
             if (value > HandOfCards.THREE_OF_A_KIND_DEFAULT) {
 
                 if (value > HandOfCards.STRAIGHT_DEFAULT) {
+
                     if (howLikely > 35) {
-                        if(this.chips >= 2){
-                            return 2;
-                        }
-                        return 1;
+                        return maxBet(2);
                     } else if (howLikely > 2) {
-                        return 1;
+                        return maxBet(1);
                     }
                     return 0;
                 }
                 if (howLikely > 60) {
-                    if(this.chips >= 2){
-                        return 2;
-                    }
-                    return 1;
+                    return maxBet(2);
                 } else if (howLikely > 10){
-                    return 1;
+                    return maxBet(1);
                 }
                 return 0;
             }
             //TODO deal with one pair modifier
             //pairs ofter affect 5draw poker so modifier is important
             if(howLikely > 95){
-                if(this.chips >= 2){
-                    return 2;
-                }
-                return 1;
+                return maxBet(2);
             } else if(howLikely > 20){
-                return 1;
+                return maxBet(1);
             }
             return 0;
         }
