@@ -1,6 +1,8 @@
 package Poker;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -14,6 +16,8 @@ public class Main {
     public static void main(String[] args) {
         GameOfPoker game = new GameOfPoker(10, 5);
         game.gameLoop();
+
+
 
 
 //        Random r = new Random();
@@ -71,14 +75,14 @@ public class Main {
 //		System.out.println(bustedStraight9 + " " + getHandType(bustedStraight9));
 //		System.out.println(probabilitiesToString(bustedStraight9));
 //
-        HandOfCards bustedStraight10 = new HandOfCards(new PlayingCard("4", 'H', 4, 4),
-                new PlayingCard("4", 'S', 4, 4),
-                new PlayingCard("9", 'C', 9, 9),
-                new PlayingCard("10", 'S', 10, 10),
-                new PlayingCard("A", 'H', 14, 14));
-
-        System.out.println(bustedStraight10 + " " + getHandType(bustedStraight10));
-        System.out.println(probabilitiesToString(bustedStraight10));
+//        HandOfCards bustedStraight10 = new HandOfCards(new PlayingCard("4", 'H', 4, 4),
+//                new PlayingCard("4", 'S', 4, 4),
+//                new PlayingCard("9", 'C', 9, 9),
+//                new PlayingCard("10", 'S', 10, 10),
+//                new PlayingCard("A", 'H', 14, 14));
+//
+//        System.out.println(bustedStraight10 + " " + getHandType(bustedStraight10));
+//        System.out.println(probabilitiesToString(bustedStraight10));
 
 
 

@@ -6,6 +6,7 @@ package Poker;
 public class HumanPlayer extends Player {
     HumanPlayer(DeckOfCards deck, int startingChips){
         super(deck, startingChips);
+        this.name = "Bob";
     }
 
 

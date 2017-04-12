@@ -62,8 +62,7 @@ public class HandOfCards {
         int position;
         for(int i = 0; i < count; i++){
             position = discardCards[i];
-            System.out.println("replacing: " + hand.get(position));
-            //hand[position] = deck.dealNext();
+//            System.out.println("replacing: " + hand.get(position));
             hand.remove(position);
             hand.add(position, deck.dealNext());
         }
